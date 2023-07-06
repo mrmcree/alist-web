@@ -185,11 +185,11 @@ const layoutRecord: Record<string, LayoutType> = (() => {
 
 bus.on("pathname", (p) => setPathname(p))
 const [_layout, _setLayout] = createSignal<LayoutType>(
-  layoutRecord[pathname()] || "list"
+  layoutRecord[pathname()] || "grid"
 )
 export const layout = () => {
   const layout = layoutRecord[pathname()]
-  _setLayout(layout || "list")
+  _setLayout(layout || "grid")
   return _layout()
 }
 export const setLayout = (layout: LayoutType) => {
